@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <--names the page in the browser tab-->
+    <title>JavaScript &amp; jQuery - Chapter 7: Introducing jQuery - Event Delegation</title>
+    <--attaches the css file-->
+    <link rel="stylesheet" href="css/c07.css" />
+  </head>
+  <body>
+    <div id="page">
+      <h1 id="header">List</h1>
+      <h2>Buy groceries</h2>
+      <!--this unorganized list is targeted in the event-delegation js file-->
+      <ul>
+        <li id="one" class="hot"><em>fresh</em> figs</li>
+        <li id="two" class="hot">pine nuts</li>
+        <li id="three" class="hot">honey</li>
+        <li id="four">balsamic vinegar</li>
+      </ul>
+      <p id="notes">Click or mouseover a hot item...</p>
+    </div>
+    <!--attaches jquery-->
+    <script src="js/jquery-1.11.0.js"></script>
+    <!--attaches the js event file-->
+    <script src="js/event-delegation.js"></script>
+  </body>
+</html>

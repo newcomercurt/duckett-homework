@@ -1,0 +1,10 @@
+body {
+  font-family: courier;
+  text-align: left;
+}
+div {
+  display: block;
+  list-style-position: inside
+}
+
+

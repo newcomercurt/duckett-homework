@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--this is the text that will display in the broser tab-->
+    <title>JavaScript &amp; jQuery - Chapter 7: Introducing jQuery - Chaining</title>
+    <!--this will link to the css which will style the menu-->
+    <link rel="stylesheet" href="css/c07.css" />
+  </head>
+  <body>
+  <!--this gives the app within the site an id of page-->
+    <div id="page">
+    <!--this gives the h1 header an id of header which can be targeted in css for styling-->
+      <h1 id="header">List</h1>
+      <!--this h2 header is a list of groceries to buy-->
+      <h2>Buy groceries</h2>
+      <ul>
+      <--!this list is targeted in the javascript file which utilizes jquery to make changes to the dom-->
+        <li id="one" class="hot"><em>fresh</em> figs</li>
+        <li id="two" class="hot">pine nuts</li>
+        <li id="three" class="hot">honey</li>
+        <li id="four">balsamic vinegar</li>
+      </ul>
+    </div>
+    <!--this script tag loads jquery-->
+    <script src="js/jquery-1.11.0.js"></script>
+    <!--this script tag loads the javascript file-->
+    <script src="js/chaining.js"></script>
+  </body>
+</html>
