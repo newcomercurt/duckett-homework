@@ -8,7 +8,7 @@ this.purpose = purpose;
 var handlerArray =[
 new handler("first", "handlebars", "feel", "okay"),
 new handler("second", "handlebars", "feel", "better"),
-new handler("third", "handlebars", "think", "great")
+new handler("third", "handlebars", "think", "")
 ];
 
 

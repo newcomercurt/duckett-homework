@@ -7,7 +7,15 @@
         <link rel="stylesheet" type="text/css" href="css.css">
         <script id="handlebars" type="text/x-handlebars-template">
         {{#each handlerArray}}
-        This is my {{attempt}} attempt using {{what}} so far I {{feeling}} it is a {{purpose}} tool.
+        <p>
+            This is my {{attempt}} attempt using {{what}} so far I {{feeling}} it is a
+            {{#if purpose }}
+                {{purpose}}
+            {{else }}
+                awesome
+            {{/if}}
+            tool.
+        </p>
         {{/each}}
         </script>
         <title>Sandbox</title>
