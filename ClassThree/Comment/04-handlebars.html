@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Handlebars Template</title>
+  <!--adds a script tag that tells the browser to treat it as text, not javascript. This servers as our template-->
+  <script id="hello" type="text/x-handlebars-template">
+    Hello {{who}}, my name is {{name}}, and I like {{what}}
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js" charset="utf-8"></script>
+  <script>
+  //creates our data object with the key value pairs which will be plugged into the handlebars template
+    var data = {
+      who: "Students",
+      name: "Ivan",
+      what: "Apples"
+    };
+    //creates our javascript object app template that stores the value of the element with id of hello
+    var appTemplate = $('#hello').html()
+    //handlebars creates our template to be resused
+    var compiledTemplate = Handlebars.compile(appTemplate);
+    //the html object takes the handlebars template and grabs the value associated with our data object and
+    //puts it into the handlebars template
+    var html = compiledTemplate(data);
+    //appens a new html element to the element with an id of app and uses our compiled template with our
+    //values from the data object
+    $('#app').append(html);
+  </script>
+
+</body>
+</html>

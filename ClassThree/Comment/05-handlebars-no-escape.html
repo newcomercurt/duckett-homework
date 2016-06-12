@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Handlebars Template</title>
+  <link rel="stylesheet" type="text/css" href="style-for-05.css">
+  <!--creates our template with our script tag of text which tells the browser to treat this as text, not javasxript-->
+  <script id="hello" type="text/x-handlebars-template">
+    Hello {{who}}, my name is {{name}}, and I like {{what}}
+    <p><br></p>
+    <!--within the double brackets. We will actually see the html elements and tags that are typed in a string-->
+    <p><span class='label'>Double (i.e., escaped): </span> {{puppy_double}}</p>
+    <!--within the triple brakcets, the html elements and tags that are within a string will be rendered and shown-->
+    <p><span class='label'>Triple (i.e., renders HTML):</span> {{{puppy_triple}}}</p>
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <!--attaches our jquery library-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" charset="utf-8"></script>
+  <!--attaches our handlebars library-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.min.js" charset="utf-8"></script>
+  <script>
+  //creates a data object that stores our information to be rendered in our handlbars template
+    var data = {
+      who: "Students",
+      name: "Ivan",
+      what: "Apples",
+      puppy_double: "Here is bold text: <b>I'm bold!</b><br>",
+      puppy_triple: "Here is bold text: <b>I'm bold!</b><br>",
+    };
+    //creates app template objec that stores our element with id of hello as a template.
+    var appTemplate = $('#hello').html()
+    //compiles our handlebars template to be reusesd
+    var compiledTemplate = Handlebars.compile(appTemplate);
+    //creates a javascript object html that has the handlbars template with our rendered information from our data object
+    var html = compiledTemplate(data);
+    //appends our template to the element with an id of #app
+    $('#app').append(html);
+  </script>
+
+</body>
+</html>

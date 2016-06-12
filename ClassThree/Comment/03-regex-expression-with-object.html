@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <title>Minimal jQuery Template with words</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" charset="utf-8"></script>
+<!--creates a script tage with id of hello and tells the browser to interpret it as a text file, this serves as our template -->
+  <script id="hello" type="text/template">
+    Hello {{who}}, my name is {{name}}, and I like {{what}}
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+  //creates a data object
+    var data = {
+      who: "Students",
+      name: "Ivan",
+      what: "Apples"
+    };
+    //this creates our compile function
+    var compile = function(template, expressions) {
+      //this will populate our {{}} with the values associated in the data object the regex function looks for text characters then runs the swapper method
+      return appTemplate.replace(/{{([A-Za-z]+)}}/g, swapper);
+      // where swapper runs and matches the text charaters with the values associated in the object
+      function swapper(match, capture) {
+        //returns the value of the object text items
+        return expressions[capture];
+      };
+    };
+    //creates app template object that stores the element with id of hello
+    var appTemplate = $('#hello').html()
+    //takes the app template object and the data object and runs the compile function on them,
+    //which creates the template and uses our data object to put the values associated with the keys
+    //into the handlebars {{}}
+    var compiledTemplate = compile(appTemplate, data);
+    //appends our element with the id of #app and adds our template with the udpated information into the DOM
+    $('#app').append(compiledTemplate);
+  </script>
+
+</body>
+</html>

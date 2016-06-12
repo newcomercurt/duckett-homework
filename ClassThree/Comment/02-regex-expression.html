@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <title>Minimal jQuery Template with Regex</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" charset="utf-8"></script>
+   <!--this script below tells the browser do not run this as a script, it is just text. We give it an id of hello so we can grab our script tag in the seperate javascipt file-->
+  <script id="hello" type="text/template">
+<!--   this is our template that we will use, handlebars is used as a placeholder for the values associated with keys 0,1,& 2
+ -->    Hello {{0}}, my name is {{1}}, and I like {{2}}
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+  //creates our compile function that takes two parameters of template and expressions
+    var compile = function(template, expressions) {
+      //runs our function that looks for any digits within our {{}} then runs our swapper function to
+      //match the values associated with the number index in our app template
+      return appTemplate.replace(/{{(\d+)}}/g, swapper);
+      // this is where the swapper method matches the values associated it the index
+      function swapper(match, number) {
+        //returns the value
+         return expressions[number];
+      };
+    };
+    //app template is assigned to the element with ide of hello and .html
+    var appTemplate = $('#hello').html()
+    //this compiles a template using the plain js item appTemplate which has the element with the #hello id associated with it
+    // that can be executed immediately using the values associate with {{0}} {{1}} and {{2}}
+    var compiledTemplate = compile(appTemplate, ["Students", "Ivan", "Apples"]);
+    //takes the compiled #hello template and copies it into the element with an id of #app
+    $('#app').append(compiledTemplate);
+  </script>
+
+</body>
+</html>

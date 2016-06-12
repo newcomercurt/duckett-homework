@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Minimal jQuery Template</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.js" charset="utf-8"></script>
+  //this script below tells the browser do not run this as a script, it is just text. We give it an id of hello so we can grab our script tag in the seperate javascipt file
+  <script id="hello" type="text/template">
+    Hello world
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+  //this code is using a jquery selector to target the element with an id of app and apending to that element a template that was created with the script tag that has an id of hello
+    $('#app').append($('#hello').html());
+  </script>
+
+</body>
+</html>
