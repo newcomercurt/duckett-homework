@@ -1,3 +1,3 @@
   $(document).ready(function() {
-    $("li#five").attr("id", "#newAt");
+    $('li#five').attr('id', '#newAt');
   });

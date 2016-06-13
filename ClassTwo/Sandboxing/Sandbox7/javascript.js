@@ -1,3 +1,3 @@
-$("ul").on("click", function() {
-  $("li").filter(":odd").hide();
+$('ul').on('click', function() {
+  $('li').filter(':odd').hide();
 });

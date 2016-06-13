@@ -1,6 +1,6 @@
-$(".four").on("mouseover", function() {
-  alert("Text: " + $(".four").text());
+$('.four').on('mouseover', function() {
+  alert('Text: ' + $('.four').text());
 });
-$(".five").click("mouseover", function() {
-  alert("HTML: " + $(".five").html());
+$('.five').click('mouseover', function() {
+  alert('HTML: ' + $('.five').html());
 });
