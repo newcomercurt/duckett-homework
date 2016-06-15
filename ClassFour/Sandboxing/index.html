@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset='UTF-8'>
+        <meta http-equiv='x-ua-compatible' content='ie=edge'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' href='css.css'>
+        <title>Sandbox</title>
+    </head>
+    <body>
+        <h1>
+          1. Write your own app from scratch that lets the user enter text
+          (you can use textarea, select>, etc.), and covert that text to HTML,
+          with proper handling (conversion) of any markdown
+          contained in that text, and render the HTML.<br>
+
+          2. Add a button that, when clicked, causes user-entered text to be
+          converted to HTML(with proper markdown handling) and appends the HTML
+          to the DOM. Repeated clicks of the button will cause repeated copies
+          to be appended.
+        </h1>
+        <textarea></textarea>
+        <div id='output'></div>
+        <script src='http://code.jquery.com/jquery-2.1.4.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js'></script>
+        <script src='highlight.min.js'></script>
+        <script src='marked.min.js'></script>
+        <script>hljs.initHighlightingOnLoad();</script>
+        <script src='javascript.js' type='text/javascript' charset='utf-8' async defer></script>
+    </body>
+</html>
