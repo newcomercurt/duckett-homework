@@ -1,0 +1,56 @@
+Joins in SQL
+
+JOIN (any different from INNER JOIN?)
+Join and inner join accomplish the same thing.
+
+SELECT
+  *
+FROM
+  customers
+JOIN orders ON
+  customers.customerid = orders.customerid;
+
+[3 points] JOIN data using three or more tables
+LEFT JOIN (any different from LEFT OUTER JOIN?)
+Left join and left outer join accomplish the same thing, this is just  a syntax preference.
+Left joins do not require a condition to met therefore every row from the left table will be returned.
+If values aren't specified in the, they will be given NULL values to fill the columns that don't have data.
+
+Select * From Customers
+LEFT JOIN Orders
+ON Customers.CustomerID = Orders.CustomerID
+LEFT JOIN OrderDetails
+ON Orders.orderID = orderDetails.orderID
+
+RIGHT JOIN (any different from RIGHT OUTER JOIN?) <-- Not supported by w3schools' site. Please see below.
+Right join and right outer join accomplish the same thing, this is just  a syntax preference
+
+Here I tried your approach of switching tables and managed to make this work in w3 schools.
+Select * From orderdetails
+LEFT JOIN Orders
+On Orders.orderID = orderDetails.orderID
+LEFT JOIN customers
+ON Customers.CustomerID = Orders.CustomerID;
+
+
+FULL JOIN (any different from FULL OUTER JOIN?) <-- Not supported by w3schools' site. Please see below.
+
+I played with this a bit, and I think this code would work, but I'm not 100%
+
+Select * From orderdetails
+LEFT JOIN Orders
+On Orders.orderID = orderDetails.orderID
+UNION
+SELECT * FROM CUSTOMERS
+RIGHT JOIN orders
+ON Customers.CustomerID = Orders.CustomerID;
+
+I also did this, which rendered in on the sqlzoo, but I am not sure if the result I got was what was to be expected. 
+
+Select * From games
+LEFT JOIN city
+On games.city = city.name
+UNION
+SELECT * FROM city
+RIGHT JOIN games
+ON games.city=city.name;
