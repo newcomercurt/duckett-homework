@@ -25,13 +25,19 @@ var home = function(style, market) {
 // Use jQuery's .getJSON() to load myData.json, and use .done()
 // to set up a function F to run when the data is ready; F should call a function 'P' to print the contents of
 // the entire array of objects using a loop or .map().-->
+
 var newestHomes = [];
-$.getJSON('data.json', function(data) {
-  $.each(data, function(key, value) {
+$.getJSON('data.json').done(function(homes) {
+  $.each(homes, function(index, home) {
     newestHomes.push(this);
+    console.log(home);
+    display(homes);
   });
-console.log(newestHomes);
-  // .done(function() {
-  //   console.log('calling f');
-  // });
 });
+
+function display(newestHomes) {
+  newestHomes.map(function(homeData) {
+    var newDiv = $('<div>').text(homeData);
+    $('#test').append(newDiv);
+  });
+}
