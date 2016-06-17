@@ -27,17 +27,22 @@ var home = function(style, market) {
 // the entire array of objects using a loop or .map().-->
 
 var newestHomes = [];
-$.getJSON('data.json').done(function(homes) {
+$.getJSON('data.json',function(homes) {
   $.each(homes, function(index, home) {
-    newestHomes.push(this);
-    console.log(home);
-    display(homes);
+    newestHomes.push(home);
+    console.log(newestHomes);
   });
+}).done(function(){
+  display(newestHomes);
 });
 
-function display(newestHomes) {
-  newestHomes.map(function(homeData) {
-    var newDiv = $('<div>').text(homeData);
-    $('#test').append(newDiv);
+function display(homes) {
+  homes.map(function(home) {
+    $('#test').append(
+        '<div>' +
+            'home style: ' + home.style + '<br>' +
+            'home market: ' + home.market +
+        '</div>'
+    );
   });
 }
