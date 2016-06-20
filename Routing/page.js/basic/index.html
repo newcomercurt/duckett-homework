@@ -3,18 +3,21 @@
   <head>
     <title>Basic</title>
     <base href="/" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.1.1/normalize.min.css">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <h1>Basic</h1>
-    <ul>
-      <li><a href="./">/</a></li>
-      <li><a href="#whoop">#whoop</a></li>
-      <li><a href="./about">/about</a></li>
-      <li><a href="./contact">/contact</a></li>
-      <li><a href="./contact/me">/contact/me</a></li>
-      <li><a href="./not-found?foo=bar">/not-found</a></li>
-    </ul>
-    <section>
+    <div class="nav-wrapper">
+      <nav class="container">
+          <a href="./">/</a>
+          <a href="#whoop">#whoop</a>
+          <a href="./about">/about</a>
+          <a href="./contact">/contact</a>
+          <a href="./contact/me">/contact/me</a>
+          <a href="./not-found?foo=bar">/not-found</a>
+      </nav>
+    </div>
+      <section>
       <article></article>
     </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
