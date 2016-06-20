@@ -1,0 +1,26 @@
+body {
+  font-size: 16px;
+  color: #333;
+}
+.nav-wrapper {
+  border-bottom: 1px solid #eee;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+}
+nav a {
+  color: #e91e63;
+  padding: 1.5em 1em;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+}
+nav a:hover {
+  color: #555
+}
+.container {
+  margin: auto;
+  width: 640px;
+  max-width: 90vw;
+}
