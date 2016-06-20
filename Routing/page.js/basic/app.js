@@ -6,20 +6,32 @@
 //
 // page.base('/basic');
 
+var $index = $('#index');
+var $about = $('#about');
+var $articles = $('#articles');
+var $404 = $('#not-found');
+
 page('/', index);
 page('/about', about);
-page('/contact', contact);
-page('/contact/:contactName', contact);
+page('/articles', articles);
 page();
 
 function index() {
-  $('article').text('viewing index');
+  showPage($index);
+  $index.text('viewing index');
 }
 
 function about() {
-  $('article').text('viewing about');
+  showPage($about);
+  $about.text('viewing about');
 }
 
-function contact(ctx) {
-  $('article').text('viewing contact ' + (ctx.params.contactName || ''));
+function articles(ctx) {
+  showPage($articles);
+  $articles.text('viewing articles');
+}
+
+function showPage($element) {
+  $('[data-page]').hide();
+  $element.show();
 }
