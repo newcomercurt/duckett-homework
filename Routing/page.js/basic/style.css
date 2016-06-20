@@ -24,3 +24,6 @@ nav a:hover {
   width: 640px;
   max-width: 90vw;
 }
+article {
+  margin: 2em 0;
+}

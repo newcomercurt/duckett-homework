@@ -5,6 +5,8 @@
 // match any of the following routes
 //
 // page.base('/basic');
+var articleTemplate = $('#article-template').html();
+var articleTemplateFn = Handlebars.compile(articleTemplate);
 
 var $index = $('#index');
 var $about = $('#about');
@@ -26,14 +28,26 @@ function about() {
   $about.text('viewing about');
 }
 
-function articles(ctx) {
+function articles() {
   showPage($articles);
-  $articles.text('viewing articles');
+  fetchArticles(function onArticlesLoaded(articles){
+    articles.forEach(function(article) {
+      var data = {
+        title: article.title,
+        content: marked(article.content)
+      };
+      var html = articleTemplateFn(data);
+      $articles.append(html);
+    });
+    $articles.find('pre code').each(function(i, block) {
+      hljs.highlightBlock(block);
+    });
+  });
 }
 
 function showPage($element) {
   $('[data-page]').hide();
-  $element.show();
+  $element.empty().show();
 }
 
 function fetchArticles(callback) {
