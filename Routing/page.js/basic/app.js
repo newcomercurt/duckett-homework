@@ -35,3 +35,7 @@ function showPage($element) {
   $('[data-page]').hide();
   $element.show();
 }
+
+function fetchArticles(callback) {
+  $.get('data.json').then(callback);
+}
