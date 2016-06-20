@@ -16,6 +16,7 @@ var $404 = $('#not-found');
 page('/', index);
 page('/about', about);
 page('/articles', articles);
+page('*', notFound);
 page();
 
 function index() {
@@ -27,9 +28,13 @@ function about() {
   showPage($about);
   $about.text('viewing about');
 }
+function notFound() {
+  showPage($404);
+}
 
 function articles() {
   showPage($articles);
+  $articles.empty();
   fetchArticles(function onArticlesLoaded(articles){
     articles.forEach(function(article) {
       var data = {
@@ -47,7 +52,7 @@ function articles() {
 
 function showPage($element) {
   $('[data-page]').hide();
-  $element.empty().show();
+  $element.show();
 }
 
 function fetchArticles(callback) {

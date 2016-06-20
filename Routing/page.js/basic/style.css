@@ -26,4 +26,9 @@ nav a:hover {
 }
 article {
   margin: 2em 0;
+  display: none;
+}
+
+.hljs {
+  font-size: 13px;
 }
