@@ -13,16 +13,13 @@ page('/contact/:contactName', contact);
 page();
 
 function index() {
-  document.querySelector('p')
-    .textContent = 'viewing index';
+  $('p').text('viewing index');
 }
 
 function about() {
-  document.querySelector('p')
-    .textContent = 'viewing about';
+  $('p').text('viewing about');
 }
 
 function contact(ctx) {
-  document.querySelector('p')
-    .textContent = 'viewing contact ' + (ctx.params.contactName || '');
+  $('p').text('viewing contact ' + (ctx.params.contactName || ''));
 }
